@@ -17,9 +17,7 @@ def partition(List, left, right):
 def random_partition(List, left, right):
     rand = random.randint(left,right)
     # print(rand)
-    temp = List[left]
-    List[left] = List[rand]
-    List[rand] = temp
+    List[left],List[rand] = List[rand],List[left]
     return partition(List,left,right)
 
 def Qsort(List, left, right,L):
