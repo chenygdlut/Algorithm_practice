@@ -1,5 +1,5 @@
-#以大顶堆为例
-def HeapAdjust(List, i, length):
+#以大顶堆为例、从小到大排
+def HeapAdjust(List, i, length):    #length是List在堆调整中的最大长度
     left = i*2+1
     right = i*2+2
     large = i
