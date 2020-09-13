@@ -16,7 +16,7 @@ def Merge(List,low,mid,high):
     List[low:high]=result
 
 def Msort(List):
-    i=1
+    i=1 #归并的粒度
     while i<len(List):
         low=0
         while low<len(List):

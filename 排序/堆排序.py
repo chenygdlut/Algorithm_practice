@@ -1,5 +1,5 @@
 #以大顶堆为例、从小到大排
-def HeapAdjust(List, i, length):    #length是List在堆调整中的最大长度
+def HeapAdjust(List, i, length):    #递归，length是List在堆调整中的最大长度
     left = i*2+1
     right = i*2+2
     large = i
@@ -22,8 +22,7 @@ def HeapSort(List, N):
     List = buildHeap(List, N)
     for i in range(N-1, -1, -1):
         List[0], List[i] = List[i], List[0]
-        N -= 1
-        List = HeapAdjust(List, 0, N)
+        List = HeapAdjust(List, 0, i)
     return List
 
 if __name__=='__main__':
