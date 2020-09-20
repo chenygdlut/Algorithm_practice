@@ -1,3 +1,6 @@
+'''
+查找矩阵中具有几个目标单词。
+'''
 loc=[[0,1],[0,-1],[1,0],[-1,0]]
 def search(board,word,index,x,y,m,n,visited,ans):
     if index==len(word)-1:
