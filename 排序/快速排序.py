@@ -13,8 +13,8 @@ def partition(List, left, right):
     return left
 
 def Qsort(List, left, right):
-    # print(L,List,left,right)
-    if left<right:
+    # print(List,left,right)
+    if left<right: #递归条件left<right
         loc=partition(List,left,right)
         List = Qsort(List,left,loc-1)
         List = Qsort(List,loc+1,right)
