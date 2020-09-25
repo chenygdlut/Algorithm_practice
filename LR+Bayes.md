@@ -63,7 +63,6 @@ P(Y=K|X)=\frac{1}{1+\sum_{k=1}^{K-1}exp(W_kX)}
 $$
 
 
-
 ## Bayes
 
 #### 方法
