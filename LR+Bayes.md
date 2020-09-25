@@ -51,6 +51,27 @@ L(w)=\sum_{i=1}^N[y_ilog\pi(x_i)+(1-y_i)log(1-\pi(x_i))]\\
 $$
 对$L(w)$求极大值得到$w$的估计值。(对$w$求偏导，使用梯度下降法或拟牛顿法)
 
+**LR梯度求解过程：**
+
+Logistic (sigmoid)函数对参数求导得：
+$$
+\frac{\partial \pi(x)}{\partial w}=\frac{\partial (\frac{exp(wx+b)}{1+exp(wx+b)})}{\partial w}=x*\frac{exp(wx+b)}{1+exp(wx+b)}*\frac{1}{1+exp(wx+b)}=x*\pi(x)*(1-\pi(x))
+$$
+对数似然函数对Logistic函数求导：
+$$
+\frac{\partial L(w)}{\partial \pi(x)}=\sum_{i=1}^N[\frac{y_i}{\pi(x)}-\frac{1-y_i}{1-\pi(x)}]
+$$
+由此可以推导出对数似然函数对参数w的梯度：
+$$
+\begin{aligned}
+\frac{\partial L(w)}{\partial w}&=\frac{\partial L(w)}{\partial \pi(x)}*\frac{\partial \pi(x)}{\partial w}\\
+&=\sum_{i=1}^N[(\frac{y_i}{\pi(x)}-\frac{1-y_i}{1-\pi(x)})*x*\pi(x)*(1-\pi(x))]\\
+&=\sum_{i=1}^N[y_ix_i(1-\pi(x_i))-(1-y_i)x_i\pi(x_i)]\\
+&=\sum_{i=1}^Nx_i(y_i-\pi(x_i))
+\end{aligned}
+$$
+
+
 #### 多项逻辑回归
 
 用于多类分类，$Y$的取值从1到K。
@@ -61,6 +82,7 @@ $$
 $$
 P(Y=K|X)=\frac{1}{1+\sum_{k=1}^{K-1}exp(W_kX)}
 $$
+
 
 
 ## Bayes
