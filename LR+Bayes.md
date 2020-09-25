@@ -53,7 +53,7 @@ $$
 
 **LR梯度求解过程：**
 
-Logistic (sigmoid)函数对参数求导得：
+Logistic (sigmoid)函数对参数$w$求导得：
 $$
 \frac{\partial \pi(x)}{\partial w}=\frac{\partial (\frac{exp(wx+b)}{1+exp(wx+b)})}{\partial w}=x*\frac{exp(wx+b)}{1+exp(wx+b)}*\frac{1}{1+exp(wx+b)}=x*\pi(x)*(1-\pi(x))
 $$
@@ -61,7 +61,7 @@ $$
 $$
 \frac{\partial L(w)}{\partial \pi(x)}=\sum_{i=1}^N[\frac{y_i}{\pi(x)}-\frac{1-y_i}{1-\pi(x)}]
 $$
-由此可以推导出对数似然函数对参数w的梯度：
+由此可以推导出对数似然函数对参数$w$的梯度：
 $$
 \begin{aligned}
 \frac{\partial L(w)}{\partial w}&=\frac{\partial L(w)}{\partial \pi(x)}*\frac{\partial \pi(x)}{\partial w}\\
@@ -70,7 +70,7 @@ $$
 &=\sum_{i=1}^Nx_i(y_i-\pi(x_i))
 \end{aligned}
 $$
-
+（可能有些博客里会在前乘一个系数$-\frac{1}{m}$）
 
 #### 多项逻辑回归
 
