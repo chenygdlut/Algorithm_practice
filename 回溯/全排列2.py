@@ -13,7 +13,7 @@ def permute2(nums):
         for i in range(len(nums)):
             if check[i]==1:
                 continue
-            if i>0 and nums[i]==nums[i-1] and check[i-1]==0:
+            if i>0 and nums[i]==nums[i-1] and check[i-1]==0:  # 前一个元素未被访问 且当前元素与前一个相同 
                 continue
             check[i]=1
             back(temp+[nums[i]],check)
