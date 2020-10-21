@@ -21,7 +21,7 @@ def func(s):
                 del_num+=j-k
                 s[k:k+n-j]=s[j:n]
             i+=1
-    return ''.join(s[:n-del_num])
+    return ''.join(s[:n-del_num+1])
 
 s='abs----cde---'
 print(func(s))
