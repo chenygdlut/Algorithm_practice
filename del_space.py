@@ -9,6 +9,7 @@ def func(s):
     del_num=0
     while i<n:
         if s[i]!='-':
+            count=0
             i+=1
             continue
         else:
@@ -16,12 +17,12 @@ def func(s):
             if count>2:
                 j=i
                 k=i
-                while j<n and s[j]=='-':
+                while j<n-del_num and s[j]=='-':
                     j+=1
                 del_num+=j-k
                 s[k:k+n-j]=s[j:n]
             i+=1
     return ''.join(s[:n-del_num])
 
-s='abs----cde---'
+s='ab-s---------cde---------'
 print(func(s))
