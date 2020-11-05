@@ -6,7 +6,7 @@ LN与BN不同，Layer Normalization在每一个样本（单一样本）上计算
 
 **LN计算公式：**其中$\alpha$和$\beta$是可训练的模型参数，需要参与反向传播。
 $$
-LN(x_i)=\alpha*\frac{x_i-\mu_L}{\sqrt(\sigma_L^2+\epsilon)}+\beta
+LN(x_i)=\alpha*\frac{x_i-\mu_L}{\sqrt{(\sigma_L^2+\epsilon)}}+\beta
 $$
 **LN代码：**在x向量的隐层维度(hidden state)的方向上进行计算，得到$\mu$和$\sigma^2$。
 
